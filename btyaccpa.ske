@@ -778,10 +778,8 @@ yyreduce:
     YYMoreStack(yyps);
   }
 
-  /* "$$ = NULL" default action */
-#ifndef YYSTYPE_CONSTRUCTOR
-  memset(&yyps->val, 0, sizeof(yyps->val));
-#endif
+  /* "$$ = $1" default action */
+  yyval = yyvsp[0];
 
 #ifdef YYPOSN
   /* default reduced position is NULL -- no position at all.
