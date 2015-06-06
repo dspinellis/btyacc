@@ -271,8 +271,8 @@ no_more_options:;
 	      q++;
 	    } else
 	      *p++ = *q;
-	  *p = 0;
-	  *l = realloc(n ,strlen(n) + 1);
+	  *p++ = 0;
+	  *l = realloc(n, p - n);
         }
     }
 }
