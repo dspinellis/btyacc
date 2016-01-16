@@ -10,7 +10,7 @@ HDRS	      = defs.h mstring.h
 
 CFLAGS	      = -g -Wall -Wstrict-prototypes -Wmissing-prototypes
 
-LDFLAGS	      = -static
+LDFLAGS	      =
 
 LIBS	      =
 
