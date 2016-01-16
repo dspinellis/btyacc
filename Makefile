@@ -14,8 +14,8 @@ LDFLAGS	      =
 
 LIBS	      =
 
-CC	      = gcc
-LINKER	      = gcc
+CC	      = cc
+LINKER	      = cc
 # LINKER      = cl
 # CC	      = cl
 
