@@ -12,7 +12,7 @@ int Eflag = 0;
 
 char *symbol_prefix = "yy";
 char *myname = "yacc";
-#ifdef __MSDOS__
+#if defined(__MSDOS__) || defined(_WIN32)
 #define DIR_CHAR '\\'
 #define DEFAULT_TMPDIR "."
 char *file_prefix = "y";
@@ -28,6 +28,7 @@ int outline;
 char *action_file_name;
 char *code_file_name;
 char *defines_file_name;
+char include_defines;
 char *output_file_name;
 char *text_file_name;
 char *union_file_name;
@@ -271,8 +272,8 @@ no_more_options:;
 	      q++;
 	    } else
 	      *p++ = *q;
-	  *p++ = 0;
-	  *l = realloc(n, p - n);
+	  *p = 0;
+	  *l = realloc(n ,strlen(n) + 1);
         }
     }
 }

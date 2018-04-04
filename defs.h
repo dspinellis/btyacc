@@ -9,6 +9,11 @@
 /*  machine-dependent definitions			*/
 /*  the following definitions are for the Tahoe		*/
 /*  they might have to be changed for other machines	*/
+#ifdef _WIN32
+#define strdup _strdup
+#define unlink _unlink
+#define mktemp _mktemp
+#endif // _WIN32
 
 /*  MAXTABLE is the maximum table size			*/
 /*  BITS_PER_WORD is the number of bits in a C unsigned	*/
@@ -248,6 +253,7 @@ extern char lflag;
 extern char rflag;
 extern char tflag;
 extern char vflag;
+extern char include_defines;
 
 extern char *myname;
 extern char *symbol_prefix;
@@ -328,7 +334,7 @@ extern Yshort nunused;
 extern Yshort final_state;
 
 /* system variable */
-extern int errno;
+#include <errno.h>
 
 /* global functions */
 
